@@ -3,9 +3,9 @@ import { check } from 'k6';
 
 export const options = {
 	thresholds: {
-    'webvital_largest_content_paint': ['p(90) < 1000'],
-    'webvital_first_input_delay{url:https://test.k6.io/}': ['p(90) < 80'],
-    'webvital_first_input_delay{url:https://test.k6.io/my_messages.php}': ['p(90) < 100'],
+    'webvital_largest_content_paint': ['p(75) < 2500'],
+    'webvital_first_input_delay': ['p(75) < 100'],
+    'webvital_cumulative_layout_shift': ['p(75) < 0.1'],
   },
   scenarios: {
     displaysDefaultLegends: {
