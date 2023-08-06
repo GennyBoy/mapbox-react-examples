@@ -3,17 +3,17 @@ import http from 'k6/http';
 
 export const options = {
   scenarios: {
-    news: {
+    topPage: {
       executor: 'constant-vus',
-      exec: 'news',
+      exec: 'topPage',
       vus: 1,
       duration: '10s',
     },
   },
 };
 
-export function news() {
-	const res = http.get('https://test.k6.io/news.php');
+export function topPage() {
+	const res = http.get('http://localhost:3000/');
 
 	check(res, {
 		'status is 200': (r) => r.status === 200,
